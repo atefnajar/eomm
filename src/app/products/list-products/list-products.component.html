@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="flex bg-black  mt-20">
+  <!-- Barre latérale -->
+  <div class="  bg-gray-light p-4">
+    <!-- Catégories -->
+    <div class="bg-black">
+      <h2 class="text-lg font-semibold mb-2">Catégories</h2>
+      <ul>
+        <li class="mb-1">Catégorie 1</li>
+        <li class="mb-1">Catégorie 2</li>
+        <li class="mb-1">Catégorie 3</li>
+        <!-- Ajoutez d'autres catégories selon vos besoins -->
+      </ul>
+    </div>
+
+    <!-- Champ de recherche -->
+    <div class="mt-4">
+      <h2 class="text-lg font-semibold mb-2">Recherche</h2>
+      <input type="text" class="w-full px-2 py-1 rounded" placeholder="Rechercher...">
+    </div>
+  </div>
+<div class="product-container w-full  p-4 flex flex-wrap justify-around"  style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <span *ngFor="let product of products" class=" w-full product rounded-4xl  my-5  max-sm:w-full md:w-1/2  flex">
+    <mat-card class="flex w-full rounded-xl overflow-hidden shadow-lg bg-white">
+      <mat-card-header>
+                <mat-card-subtitle class="bg-blue w-full rounded-full text-center">{{product?.category}}$</mat-card-subtitle>
+        <mat-card-title class="font-bold">{{product?.title}}</mat-card-title>
+        <img width="50px" heigth="50px" class="flex-end m-5" src="{{product?.image}}">
+        <mat-card-subtitle class="text-4xl text-center">{{product?.price}}$</mat-card-subtitle>
+                <mat-card-subtitle class=" text-center">{{product?.description}}$</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions class="justify-center">
+        <button mat-button class="bg-green rounded-full ">Ajouter Au Panier</button>
+
+      </mat-card-actions>
+    </mat-card>
+  </span>
+</div>
+</div>
