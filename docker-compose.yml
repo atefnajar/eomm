@@ -1,17 +1,14 @@
 version: '3'
+
 services:
-  ecomm-angular:
+  ecomm-application:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ecomm-angular
-    container_name: ecomm-angular
-    volumes:
-      - ./:/home/
-    environment:
-      - MONGO_USERNAME=mongo
-      - MONGO_PASSWORD=mongo
-      - MONGO_PORT=27017
-
     ports:
-      - 8080:80
+      - "4200:4200"  # Ajustez le port si nécessaire
+      - "8010:80"  # Ajustez le port si nécessaire
+    volumes:
+      - /c/Users/najar/Desktop/ecomm-application:/app
+    environment:
+      - NODE_ENV=development
